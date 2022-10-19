@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body onload="find()">
+<label for="name">Tên ngôi sao nhập vào:</label>
+<input type="text" id="name" disabled>
+<p id="p"></p>
+</body>
+<script>
+    let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let inp=prompt('Nhập vào tên ngôi sao thuộc 7 ngôi sao đã cho')
+    document.getElementById('name').value=inp;
+
+    function find() {
+        let stt = 0;
+
+        let thuoc = 1;
+        for (let i = 0; i < star.length; i++) {
+            if (inp === star[i]) {
+                thuoc = 0;
+                stt = i;
+                break;
+            }
+        }
+        if (thuoc == true) {
+            document.getElementById('p').innerHTML = 'Nhập vào ngôi sao thuộc 7 ngôi đã cho'
+        } else {
+            document.getElementById('p').innerHTML = inp + ' Thuộc chòm sao: ' + constellation[stt]
+        }
+    }
+
+
+
+
+</script>
+</html>
